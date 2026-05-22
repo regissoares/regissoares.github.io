@@ -9,6 +9,7 @@ body {
 }
 
 main {
+  box-sizing: border-box;
   padding: 1rem;
   max-width: 36rem;
   min-height: 100vh;
@@ -18,8 +19,8 @@ h1,
 p,
 a {
   padding: 0.25rem 0.5rem;
-  background-color: #512bd4;
   color: #fff;
+  background-color: #4338ca;
 }
 
 h1,
@@ -31,17 +32,9 @@ p {
 h1 {
   display: block;
   width: fit-content;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem;
   font-size: 2rem;
   font-weight: 500;
-}
-
-.subtitle {
-  display: block;
-  width: fit-content;
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-  font-weight: 400;
 }
 
 p {
@@ -51,27 +44,27 @@ p {
 }
 
 section {
-  margin-bottom: 2rem;
-}
-
-nav {
-  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 a {
   display: inline-block;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 a:hover,
-a:focus {
+a:focus-visible {
   text-decoration: underline;
   transform: translateY(-2px);
 }
 
 a:focus {
-  outline: 2px solid #512bd4;
+  outline: none;
+}
+
+a:focus-visible {
+  outline: 2px solid #000;
   outline-offset: 2px;
 }
 
@@ -84,4 +77,15 @@ ul {
 li {
   display: block;
   padding: 0.3rem 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a {
+    transition: none;
+  }
+
+  a:hover,
+  a:focus-visible {
+    transform: none;
+  }
 }
